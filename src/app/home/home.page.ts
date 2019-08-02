@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { DatabaseProvider } from '../providers/database';
+import { Estado } from '../model/estado';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,14 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private db: DatabaseProvider) {
+    estado: Estado = new Estado();
+    estado.nome = "são paulo";
+    estado.sigla = "SP";
+    db.createDatabase();
+    db.salvarEstado(estado);
+  }
+
+
 
 }
