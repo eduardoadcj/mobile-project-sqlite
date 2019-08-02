@@ -17,6 +17,4 @@ export class HomePage {
     db.salvarEstado(estado);
   }
 
-
-
 }
